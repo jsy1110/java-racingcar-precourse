@@ -1,7 +1,11 @@
 package racingcar.domain.Player;
 
+import java.util.List;
+
 public interface Player {
 
-    String getInput();
+    List<String> getCars();
+
+    int getNumber();
 
 }
