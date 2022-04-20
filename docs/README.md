@@ -32,7 +32,6 @@
 - AppConfig를 통해 객체간 의존성을 주입한다. (DI)
 3. 각 도메인별 역할
 - Player : 자동차의 이름 입력과 이동횟수 입력
-- Opponent : Player가 입력한 횟수 만큼 각 자동차에 대해 전진 or 멈춤 처리
 - Vehicle : Player가 입력한 값에 따라 정의된 자동차 객체
 - Settings : 게임에 필요한 환경 세팅
 - GameRule : 최종 Vehicle의 전진 거리를 비교하여 결과 출력
