@@ -83,7 +83,7 @@ class SettingsTest extends NsTest{
 
     @Test
     @DisplayName("경기수가 음수이면 에러를 발생시킨다.")
-    void 경기수입력_음수_ERROR() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void 경기수입력_음수_ERROR() {
         assertSimpleTest(
                 () -> {
                     runException("Fer, Mer, HAS, RedBu", "-1");
@@ -94,7 +94,7 @@ class SettingsTest extends NsTest{
 
     @Test
     @DisplayName("최대 경기수 이상 입력시 에러를 발생시킨다.")
-    void 경기수입력_최대값_OVER_ERROR() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void 경기수입력_최대값_OVER_ERROR() {
         assertSimpleTest(
                 () -> {
                     runException("Fer, Mer, HAS, RedBu", "10001");
@@ -105,7 +105,7 @@ class SettingsTest extends NsTest{
 
     @Test
     @DisplayName("최소 경기수 이하 입력시 에러를 발생시킨다.")
-    void 경기수입력_최소값_OVER_ERROR() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    void 경기수입력_최소값_OVER_ERROR() {
         assertSimpleTest(
                 () -> {
                     runException("Fer, Mer, HAS, RedBu", "0");
