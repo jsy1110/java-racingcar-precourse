@@ -1,49 +1,25 @@
 package racingcar.view;
 
-import racingcar.domain.GameRule.GameRule;
-import racingcar.domain.Player.Player;
-import racingcar.domain.Settings.Settings;
-import racingcar.domain.Vehicle.CarVehicle;
-import racingcar.domain.Vehicle.Vehicle;
-
-import java.util.ArrayList;
-import java.util.List;
+import racingcar.domain.gamerule.GameRule;
+import racingcar.domain.settings.Settings;
+import racingcar.domain.circuit.Circuit;
 
 public class GameView implements View {
 
-    private final Player player;
-    private final GameRule gameRule;
     private final Settings settings;
+    private final GameRule gameRule;
 
-    private Integer iteration;
-
-    public GameView(Player player, GameRule gameRule, Settings settings) {
-        this.player = player;
-        this.gameRule = gameRule;
+    public GameView(Settings settings, GameRule gameRule) {
         this.settings = settings;
+        this.gameRule = gameRule;
     }
 
     @Override
     public void playGame() {
-        CarVehicle cars = getCars();
-        int iter = getNumber();
+        Circuit circuit = settings.getCircuit();
+
     }
 
-    private CarVehicle getCars() {
-        try {
-            return new CarVehicle(player.getCars());
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
-            return new CarVehicle(player.getCars());
-        }
-    }
 
-    private int getNumber() {
-        try {
-            return player.getNumber();
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
-            return player.getNumber();
-        }
-    }
+
 }
