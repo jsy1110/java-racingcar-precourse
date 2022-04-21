@@ -7,20 +7,25 @@ import racingcar.domain.circuit.CarVehicle;
 import racingcar.domain.circuit.Circuit;
 import racingcar.utils.GameMessage;
 
-import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Settings {
 
-    private Set<CarVehicle> cars = new HashSet<>();
     private RacingRound round;
+    private Set<CarVehicle> cars = new TreeSet<>();
 
     public Circuit getCircuit() {
 
         while (!createCircuit()) ;
         while (!createRound()) ;
-        return new Circuit(cars, round);
+        return new Circuit(cars);
     }
+
+    public RacingRound getRound() {
+        return round;
+    }
+
 
     private boolean createCircuit() {
         System.out.println(GameMessage.INPUT_CARS_LIST.getMessage());
@@ -50,4 +55,5 @@ public class Settings {
         }
         return true;
     }
+
 }

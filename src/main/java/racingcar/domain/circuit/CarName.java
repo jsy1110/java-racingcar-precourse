@@ -10,6 +10,10 @@ public class CarName {
         this.carName = carName;
     }
 
+    public String getCarName() {
+        return carName;
+    }
+
     private void checkLength(String name) {
         if (name.length() > 5)  {
             throw new IllegalArgumentException(ExceptionMessage.CAR_NAME_LENGTH_TOO_LONG.getMessage());

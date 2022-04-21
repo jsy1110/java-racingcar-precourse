@@ -17,7 +17,8 @@ public class GameView implements View {
     @Override
     public void playGame() {
         Circuit circuit = settings.getCircuit();
-
+        circuit.play(settings.getRound());
+        gameRule.getResult(circuit);
     }
 
 

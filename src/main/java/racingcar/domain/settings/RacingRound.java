@@ -16,4 +16,8 @@ public class RacingRound {
         }
         this.round = round;
     }
+
+    public int getRound() {
+        return round;
+    }
 }

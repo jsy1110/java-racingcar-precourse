@@ -1,9 +1,9 @@
 package racingcar.domain.gamerule;
 
-import racingcar.domain.circuit.Vehicle;
+import racingcar.domain.circuit.Circuit;
 
 public interface GameRule {
 
-    String getResult(Vehicle vehicle);
+    String getResult(Circuit circuit);
 
 }
