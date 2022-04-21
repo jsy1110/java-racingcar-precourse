@@ -1,6 +1,9 @@
 package racingcar.domain.circuit;
 
 import camp.nextstep.edu.missionutils.Randoms;
+import racingcar.utils.PrintUtils;
+
+import static racingcar.utils.PrintUtils.*;
 
 public class CarVehicle implements Vehicle, Comparable<CarVehicle> {
 
@@ -34,10 +37,10 @@ public class CarVehicle implements Vehicle, Comparable<CarVehicle> {
     }
 
     public void showPosition() {
-        System.out.print(carName.getCarName() + " : ");
+        printMessage(carName.getCarName() + " : ");
         for (int i = 0; i < carPosition.getPosition(); i++) {
-            System.out.print("-");
+            printMessage("-");
         }
-        System.out.println();
+        changeLine();
     }
 }

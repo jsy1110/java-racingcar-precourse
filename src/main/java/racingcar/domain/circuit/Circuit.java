@@ -1,10 +1,12 @@
 package racingcar.domain.circuit;
 
-import racingcar.domain.settings.RacingRound;
 import racingcar.utils.ExceptionMessage;
+import racingcar.utils.PrintUtils;
 
 import java.util.List;
-import java.util.Set;
+
+import static racingcar.utils.PrintUtils.changeLine;
+import static racingcar.utils.PrintUtils.printMessageLine;
 
 public class Circuit {
 
@@ -37,7 +39,7 @@ public class Circuit {
             carVehicle.go();
             carVehicle.showPosition();
         });
-        System.out.println();
+        changeLine();
     }
 
 }

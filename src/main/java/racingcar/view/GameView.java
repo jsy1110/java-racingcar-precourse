@@ -6,8 +6,11 @@ import racingcar.domain.gamerule.GameRule;
 import racingcar.domain.settings.Settings;
 import racingcar.domain.circuit.Circuit;
 import racingcar.utils.GameMessage;
+import racingcar.utils.PrintUtils;
 
 import java.util.List;
+
+import static racingcar.utils.PrintUtils.printMessage;
 
 public class GameView implements View {
 
@@ -28,7 +31,7 @@ public class GameView implements View {
     }
 
     private void showChampion(List<String> champions) {
-        System.out.print(GameMessage.THE_CHAMPION.getMessage() +
+        printMessage(GameMessage.THE_CHAMPION.getMessage() +
                 StringUtils.join(champions,",") +
                 GameMessage.IS_WHO.getMessage());
     }

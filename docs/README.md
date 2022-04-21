@@ -27,6 +27,14 @@
   - 서킷 생성을 위한 게임 라운드 입력 : `RacingRound`
 - `Circuit` : 사용자 입력값으로부터 만들어진 자동차 경주 경기장
 
+## 2주차 요구사항
+1. 일급콜렉션 활용
+- `Circuit` : 경주 자동차(이름, 위치) List<CarVehicle> 포장
+- `InputNames` : 자동차 이름 리스트 List<String> 포장
+2. 모든 원시값과 문자열 포장
+- `CarName` : 자동차 이름 String 포장
+- `CarPosition` : 자동차 위치 int 포장 
+- `RacingRound` : 경기횟수 int 포장
 
 ## 구현 기능
 ### Main
@@ -42,23 +50,26 @@
 - AppConfig 클래스를 통해 각 객체 별 의존성 주입 관계를 정의한다.
 
 ### 도메인
-1. Player (Interface) -> RacingPlayer
-- `getCars()` : 자동차들의 이름을 입력 받는다.
-- `getNumber()` : 이동할 횟수를 입력 받는다.
-- `validateCars(String input)` : 플레이어의 입력값을 검증한다. 입력값에 오류가 있는 경우 IllegalArgumentException 발생 후 종료된다.
-- `validateNumber(String input)` : 플레이어의 입력값을 검증한다. 입력값에 오류가 있는 경우 IllegalArgumentException 발생 후 종료된다.
+1. Settings
+- `createCircuit()` : 자동차 경주에 참가할 자동차를 입력받아 출발점에 위치시킨다.
+  - InputNames : 일급 컬렉션을 이용한 자동차 이름 중복 금지
+  - CarName : 자동차 이름 원시값을 포장하여 5글자 이상 자동차 입력 금지
+- `createRound()` : 자동차 경주를 진행할 게임 횟수를 입력받는다.
 
-2. Settings (Interface) -> RacingSetting
-- 출발선에 들어갈 경주용 자동차들의 초기 세팅값을 결정한다.
-- `create(String cars, String number)` : 자동차 입력과 횟수값을 이용해서 Vehicle(RacingCar)를 만든다.
+2. Circuit (일급 컬렉션 : First class collection)
+- 경기에 참가할 자동차 리스트를 관리한다.
+- 경기에 참가할 수 있는 최대 자동차의 개수는 10,000대이다.(자체 제약 설정)
 
-3. Vehicle (CarVehicle)
-- Player가 입력한 자동차의 이름과 이동횟수를 이용하여 만들어진 경주용 객체
-- `Go()` : 해당 Vehicle을 1회 이동시킨다. 랜덤값에 따라 전진 혹은 멈춤이 결정된다.
+3. Vehicle(CarVehicle)
+- `go()` : 랜덤값에 의해 전진, 멈춤이 결정된다.
 
-4. GmaeRule (Interface) -> RacingGameRule
+4. GameRule (Interface) -> RacingGameRule
 - Vehicle 들의 최종위치를 확인하고, 1등을 결정한다.
-- `String judge(ArrayList<Vehicle> vehicles)` : Vehicle의 최종 위치를 확인하여 1등을 결정한다.
+- `List<String> getResult(Circuit circuit)` : 서킷에서 가장 멀리 전진한 자동차를 찾아 반환한다.
+
+## Utils
+1. ExceptionMessage : Exception 발생 시 ERROR 메시지 관리
+2. GameMessage : 게임과 관련된 각종 출력 메시지 관리
 
 ## Test
 TBD

@@ -1,16 +1,13 @@
 package racingcar.domain.settings;
 
 import camp.nextstep.edu.missionutils.Console;
-import racingcar.domain.circuit.CarName;
-import racingcar.domain.circuit.CarPosition;
-import racingcar.domain.circuit.CarVehicle;
-import racingcar.domain.circuit.Circuit;
+import racingcar.domain.circuit.*;
 import racingcar.utils.GameMessage;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
+
+import static racingcar.utils.PrintUtils.printMessageLine;
 
 public class Settings {
 
@@ -18,7 +15,6 @@ public class Settings {
     private List<CarVehicle> cars = new ArrayList<>();
 
     public Circuit getCircuit() {
-
         createCircuit();
         createRound();
         return new Circuit(cars);
@@ -28,13 +24,12 @@ public class Settings {
         return round;
     }
 
-
     private void createCircuit() {
-        System.out.println(GameMessage.INPUT_CARS_LIST.getMessage());
+        printMessageLine(GameMessage.INPUT_CARS_LIST.getMessage());
         try {
             createCars();
         } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
+            printMessageLine(e.getMessage());
             createCircuit();
         }
     }
@@ -50,10 +45,10 @@ public class Settings {
 
     private void createRound() {
         try {
-            System.out.println(GameMessage.INPUT_ROUND.getMessage());
+            printMessageLine(GameMessage.INPUT_ROUND.getMessage());
             round = new RacingRound(Console.readLine().trim());
         } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
+            printMessageLine(e.getMessage());
             createRound();
         }
     }
