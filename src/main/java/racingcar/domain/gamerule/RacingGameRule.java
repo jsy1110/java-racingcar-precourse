@@ -1,6 +1,6 @@
 package racingcar.domain.gamerule;
 
-import racingcar.domain.circuit.CarVehicle;
+import racingcar.domain.circuit.vehicle.CarVehicle;
 import racingcar.domain.circuit.Circuit;
 
 import java.util.ArrayList;

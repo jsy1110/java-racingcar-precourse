@@ -2,7 +2,7 @@ package racingcar.domain.circuit;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
+import racingcar.domain.circuit.vehicle.CarVehicle;
 
 import java.util.ArrayList;
 import java.util.List;

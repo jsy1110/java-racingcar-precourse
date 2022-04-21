@@ -1,7 +1,6 @@
-package racingcar.domain.circuit;
+package racingcar.domain.circuit.vehicle;
 
 import camp.nextstep.edu.missionutils.Randoms;
-import racingcar.utils.PrintUtils;
 
 import static racingcar.utils.PrintUtils.*;
 

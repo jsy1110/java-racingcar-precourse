@@ -3,6 +3,7 @@ package racingcar.domain.circuit;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import racingcar.domain.circuit.vehicle.CarName;
 
 import static org.junit.jupiter.api.Assertions.*;
 

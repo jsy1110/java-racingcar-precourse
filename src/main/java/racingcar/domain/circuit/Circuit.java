@@ -1,12 +1,11 @@
 package racingcar.domain.circuit;
 
+import racingcar.domain.circuit.vehicle.CarVehicle;
 import racingcar.utils.ExceptionMessage;
-import racingcar.utils.PrintUtils;
 
 import java.util.List;
 
 import static racingcar.utils.PrintUtils.changeLine;
-import static racingcar.utils.PrintUtils.printMessageLine;
 
 public class Circuit {
 

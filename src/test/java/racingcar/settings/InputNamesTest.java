@@ -1,7 +1,6 @@
 package racingcar.settings;
 
 import org.junit.jupiter.api.Test;
-import racingcar.domain.circuit.CarName;
 
 import static org.junit.jupiter.api.Assertions.*;
 

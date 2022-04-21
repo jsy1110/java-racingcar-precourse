@@ -2,6 +2,9 @@ package racingcar.settings;
 
 import camp.nextstep.edu.missionutils.Console;
 import racingcar.domain.circuit.*;
+import racingcar.domain.circuit.vehicle.CarName;
+import racingcar.domain.circuit.vehicle.CarPosition;
+import racingcar.domain.circuit.vehicle.CarVehicle;
 import racingcar.utils.GameMessage;
 
 import java.util.ArrayList;

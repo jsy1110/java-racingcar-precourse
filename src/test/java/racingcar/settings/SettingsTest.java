@@ -6,9 +6,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import racingcar.AppConfig;
 import racingcar.Application;
-import racingcar.domain.circuit.CarVehicle;
+import racingcar.domain.circuit.vehicle.CarVehicle;
 import racingcar.domain.circuit.RacingRound;
-import racingcar.settings.Settings;
 import racingcar.utils.ExceptionMessage;
 
 import java.io.ByteArrayInputStream;

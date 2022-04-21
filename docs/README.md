@@ -44,7 +44,7 @@
 ### View
 - 생성자를 통해 객체 생성 시점에 필요한 객체를 주입 받는다. (Settings, GameRule)
 - `playGame()` : 전체 게임의 흐름을 제어한다.
-- 게임 흐름 : Settings -> Circuit 생성 -> GameRule 우승자 선정
+- 게임 흐름 : Settings(사용자 입력) -> Circuit(게임 플레이) -> GameRule(우승자 선정)
 
 ### Config
 - AppConfig 클래스를 통해 각 객체 별 의존성 주입 관계를 정의한다.
@@ -54,11 +54,12 @@
   - InputNames : 일급 컬렉션을 이용한 자동차 이름 중복 금지
   - CarName : 자동차 이름 원시값을 포장하여 5글자 이상 자동차 입력 금지
 - `createRound()` : 자동차 경주를 진행할 게임 횟수를 입력받는다.
-
+  - RacingRound : 1~10,000경기 사이의 경기수만 입력 가능
+  
 ### 도메인
 1. Circuit (일급 컬렉션 : First class collection)
 - 경기에 참가할 자동차 리스트를 관리한다.
-- 경기에 참가할 수 있는 최대 자동차의 개수는 10,000대이다.(자체 제약 설정)
+- 경기에 참가할 수 있는 최대 자동차의 개수는 1,000대이다.(자체 제약 설정)
 
 2. Vehicle(CarVehicle)
 - `go()` : 랜덤값에 의해 전진, 멈춤이 결정된다.
