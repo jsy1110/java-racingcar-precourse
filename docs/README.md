@@ -73,5 +73,6 @@
 3. PrintUtils : 시스템 출력 함수 Wrapping
 
 ## Test
-TBD
-
+1. 일급 컬렉션 사용에 대한 테스트 : CircuitTest, InputNamesTest
+2. 원시값 포장에 대한 테스트 : CarNameTest, CarPositionTest, RacingRoundTest
+3. 초기 세팅값 입력에 대한 테스트 : SettingsTest
