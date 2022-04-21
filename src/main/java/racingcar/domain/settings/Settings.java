@@ -33,7 +33,7 @@ public class Settings {
         System.out.println(GameMessage.INPUT_CARS_LIST.getMessage());
         try {
             createCars();
-        } catch (RuntimeException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
             createCircuit();
         }
@@ -52,7 +52,7 @@ public class Settings {
         try {
             System.out.println(GameMessage.INPUT_ROUND.getMessage());
             round = new RacingRound(Console.readLine().trim());
-        } catch (RuntimeException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
             createRound();
         }

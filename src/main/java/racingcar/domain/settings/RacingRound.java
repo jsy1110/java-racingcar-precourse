@@ -10,7 +10,7 @@ public class RacingRound {
         try {
             round = Integer.parseUnsignedInt(input);
         } catch (NumberFormatException e) {
-            throw new NumberFormatException(ExceptionMessage.NEGATIVE_ROUND_NUMBER.getMessage());
+            throw new IllegalArgumentException(ExceptionMessage.NEGATIVE_ROUND_NUMBER.getMessage());
         }
 
         if (round > 10000) {
