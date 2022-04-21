@@ -3,10 +3,9 @@ package racingcar.view;
 
 import com.sun.deploy.util.StringUtils;
 import racingcar.domain.gamerule.GameRule;
-import racingcar.domain.settings.Settings;
+import racingcar.settings.Settings;
 import racingcar.domain.circuit.Circuit;
 import racingcar.utils.GameMessage;
-import racingcar.utils.PrintUtils;
 
 import java.util.List;
 
@@ -24,7 +23,7 @@ public class GameView implements View {
 
     @Override
     public void playGame() {
-        Circuit circuit = settings.getCircuit();
+        Circuit circuit = settings.makeGame();
         circuit.play(settings.getRound());
         List<String> champions = gameRule.getResult(circuit);
         showChampion(champions);

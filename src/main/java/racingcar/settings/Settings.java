@@ -1,4 +1,4 @@
-package racingcar.domain.settings;
+package racingcar.settings;
 
 import camp.nextstep.edu.missionutils.Console;
 import racingcar.domain.circuit.*;
@@ -14,10 +14,14 @@ public class Settings {
     private RacingRound round;
     private List<CarVehicle> cars = new ArrayList<>();
 
-    public Circuit getCircuit() {
+    public Circuit makeGame() {
         createCircuit();
         createRound();
         return new Circuit(cars);
+    }
+
+    public List<CarVehicle> getCars() {
+        return cars;
     }
 
     public RacingRound getRound() {
@@ -35,7 +39,7 @@ public class Settings {
     }
 
     private void createCars() throws IllegalArgumentException {
-        InputNames inputNames = new InputNames(Console.readLine().trim());
+        InputNames inputNames = new InputNames(Console.readLine().replaceAll(" ",""));
         for (String name : inputNames.getNames()) {
             CarName carName = new CarName(name);
             CarPosition carPosition = new CarPosition(0);

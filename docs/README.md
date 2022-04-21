@@ -49,27 +49,28 @@
 ### Config
 - AppConfig 클래스를 통해 각 객체 별 의존성 주입 관계를 정의한다.
 
-### 도메인
-1. Settings
+### Settings
 - `createCircuit()` : 자동차 경주에 참가할 자동차를 입력받아 출발점에 위치시킨다.
   - InputNames : 일급 컬렉션을 이용한 자동차 이름 중복 금지
   - CarName : 자동차 이름 원시값을 포장하여 5글자 이상 자동차 입력 금지
 - `createRound()` : 자동차 경주를 진행할 게임 횟수를 입력받는다.
 
-2. Circuit (일급 컬렉션 : First class collection)
+### 도메인
+1. Circuit (일급 컬렉션 : First class collection)
 - 경기에 참가할 자동차 리스트를 관리한다.
 - 경기에 참가할 수 있는 최대 자동차의 개수는 10,000대이다.(자체 제약 설정)
 
-3. Vehicle(CarVehicle)
+2. Vehicle(CarVehicle)
 - `go()` : 랜덤값에 의해 전진, 멈춤이 결정된다.
 
-4. GameRule (Interface) -> RacingGameRule
+3. GameRule (Interface) -> RacingGameRule
 - Vehicle 들의 최종위치를 확인하고, 1등을 결정한다.
 - `List<String> getResult(Circuit circuit)` : 서킷에서 가장 멀리 전진한 자동차를 찾아 반환한다.
 
 ## Utils
 1. ExceptionMessage : Exception 발생 시 ERROR 메시지 관리
 2. GameMessage : 게임과 관련된 각종 출력 메시지 관리
+3. PrintUtils : 시스템 출력 함수 Wrapping
 
 ## Test
 TBD

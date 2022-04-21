@@ -1,4 +1,4 @@
-package racingcar.domain.settings;
+package racingcar.settings;
 
 import racingcar.utils.ExceptionMessage;
 

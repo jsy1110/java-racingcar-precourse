@@ -2,7 +2,7 @@ package racingcar;
 
 import racingcar.domain.gamerule.GameRule;
 import racingcar.domain.gamerule.RacingGameRule;
-import racingcar.domain.settings.Settings;
+import racingcar.settings.Settings;
 import racingcar.view.GameView;
 
 public class AppConfig {
