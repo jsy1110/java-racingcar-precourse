@@ -35,10 +35,11 @@ public class Circuit {
     }
 
     public void playOneRound() {
-        cars.stream().forEach(carVehicle -> {
+        cars.forEach(carVehicle -> {
             carVehicle.go();
             carVehicle.showPosition();
         });
+
         changeLine();
     }
 

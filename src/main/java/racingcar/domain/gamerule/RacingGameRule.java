@@ -13,10 +13,17 @@ public class RacingGameRule implements GameRule {
     public List<String> getResult(Circuit circuit) {
         List<String> champions = new ArrayList<>();
         CarVehicle maxCar = Collections.max(circuit.getCars());
-        circuit.getCars().stream()
-                .filter(carVehicle -> carVehicle.compareTo(maxCar) == 0)
-                .forEach(carVehicle -> champions.add(carVehicle.getCarName().getCarName()));
+
+        circuit.getCars().forEach(carVehicle -> {
+            getChampion(champions, maxCar, carVehicle);
+        });
 
         return champions;
+    }
+
+    private void getChampion(List<String> champions, CarVehicle maxCar, CarVehicle carVehicle) {
+        if (carVehicle.compareTo(maxCar) == 0) {
+            champions.add(carVehicle.getCarName().getCarName());
+        }
     }
 }
