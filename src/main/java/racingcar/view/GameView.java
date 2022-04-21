@@ -1,8 +1,13 @@
 package racingcar.view;
 
+
+import com.sun.deploy.util.StringUtils;
 import racingcar.domain.gamerule.GameRule;
 import racingcar.domain.settings.Settings;
 import racingcar.domain.circuit.Circuit;
+import racingcar.utils.GameMessage;
+
+import java.util.List;
 
 public class GameView implements View {
 
@@ -18,9 +23,14 @@ public class GameView implements View {
     public void playGame() {
         Circuit circuit = settings.getCircuit();
         circuit.play(settings.getRound());
-        gameRule.getResult(circuit);
+        List<String> champions = gameRule.getResult(circuit);
+        showChampion(champions);
     }
 
-
+    private void showChampion(List<String> champions) {
+        System.out.print(GameMessage.THE_CHAMPION.getMessage() +
+                StringUtils.join(champions,",") +
+                GameMessage.IS_WHO.getMessage());
+    }
 
 }

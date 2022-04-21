@@ -7,13 +7,15 @@ import racingcar.domain.circuit.CarVehicle;
 import racingcar.domain.circuit.Circuit;
 import racingcar.utils.GameMessage;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
 public class Settings {
 
     private RacingRound round;
-    private Set<CarVehicle> cars = new TreeSet<>();
+    private List<CarVehicle> cars = new ArrayList<>();
 
     public Circuit getCircuit() {
 
@@ -31,10 +33,11 @@ public class Settings {
         System.out.println(GameMessage.INPUT_CARS_LIST.getMessage());
         try {
             createCars();
+            return true;
         } catch (RuntimeException e) {
             System.out.println(e.getMessage());
+            return false;
         }
-        return true;
     }
 
     private void createCars() throws IllegalArgumentException {
@@ -50,10 +53,11 @@ public class Settings {
         try {
             System.out.println(GameMessage.INPUT_ROUND.getMessage());
             round = new RacingRound(Console.readLine().trim());
+            return true;
         } catch (RuntimeException e) {
             System.out.println(e.getMessage());
+            return false;
         }
-        return true;
     }
 
 }

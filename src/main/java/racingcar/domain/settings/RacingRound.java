@@ -1,20 +1,25 @@
 package racingcar.domain.settings;
 
+import racingcar.utils.ExceptionMessage;
+
 public class RacingRound {
 
     private final int round;
 
     public RacingRound(String input) throws IllegalArgumentException {
-        int round = Integer.parseUnsignedInt(input);
+        try {
+            round = Integer.parseUnsignedInt(input);
+        } catch (NumberFormatException e) {
+            throw new NumberFormatException(ExceptionMessage.NEGATIVE_ROUND_NUMBER.getMessage());
+        }
 
         if (round > 10000) {
-            throw new IllegalArgumentException("[ERROR] 최대 경기 라운드는 10000 입니다.");
+            throw new IllegalArgumentException(ExceptionMessage.MAXIMUM_ROUND_OVER.getMessage());
         }
 
         if (round < 1) {
-            throw new IllegalArgumentException("[ERROR] 최소 1경기 이상 입력해야 합니다.");
+            throw new IllegalArgumentException(ExceptionMessage.MINIMUM_ONE_GAME.getMessage());
         }
-        this.round = round;
     }
 
     public int getRound() {

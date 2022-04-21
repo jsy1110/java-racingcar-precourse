@@ -12,6 +12,14 @@ public class CarVehicle implements Vehicle, Comparable<CarVehicle> {
         this.carPosition = carPosition;
     }
 
+    public CarName getCarName() {
+        return carName;
+    }
+
+    public CarPosition getCarPosition() {
+        return carPosition;
+    }
+
     @Override
     public void go() {
         int random = Randoms.pickNumberInRange(0, 9);
@@ -22,15 +30,14 @@ public class CarVehicle implements Vehicle, Comparable<CarVehicle> {
 
     @Override
     public int compareTo(CarVehicle car) {
-        if (this.carPosition.getPosition() < car.carPosition.getPosition()) {
-            return 1;
+        return carPosition.getPosition() - car.carPosition.getPosition();
+    }
+
+    public void showPosition() {
+        System.out.print(carName.getCarName() + " : ");
+        for (int i = 0; i < carPosition.getPosition(); i++) {
+            System.out.print("-");
         }
-        if (this.carPosition.getPosition() == car.carPosition.getPosition()) {
-            return 0;
-        }
-        if (this.carPosition.getPosition() > car.carPosition.getPosition()) {
-            return -1;
-        }
-        throw new UnsupportedOperationException();
+        System.out.println();
     }
 }

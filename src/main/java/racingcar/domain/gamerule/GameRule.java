@@ -2,8 +2,10 @@ package racingcar.domain.gamerule;
 
 import racingcar.domain.circuit.Circuit;
 
+import java.util.List;
+
 public interface GameRule {
 
-    String getResult(Circuit circuit);
+    List<String> getResult(Circuit circuit);
 
 }

@@ -22,7 +22,7 @@ public class CarPosition {
 
     public void forward(int step) {
         if (step < 0) {
-            throw new IllegalArgumentException(ExceptionMessage.CAR_POSITION_WRONG.getMessage());
+            throw new IllegalArgumentException(ExceptionMessage.CAR_STEP_NEGATIVE.getMessage());
         }
         position += step;
     }
