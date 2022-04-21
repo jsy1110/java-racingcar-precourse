@@ -1,6 +1,6 @@
-package racingcar.domain.GameRule;
+package racingcar.domain.gamerule;
 
-import racingcar.domain.Vehicle.Vehicle;
+import racingcar.domain.circuit.Vehicle;
 
 public interface GameRule {
 
