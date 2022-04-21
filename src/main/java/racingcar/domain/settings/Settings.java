@@ -19,8 +19,8 @@ public class Settings {
 
     public Circuit getCircuit() {
 
-        while (!createCircuit()) ;
-        while (!createRound()) ;
+        createCircuit();
+        createRound();
         return new Circuit(cars);
     }
 
@@ -29,14 +29,13 @@ public class Settings {
     }
 
 
-    private boolean createCircuit() {
+    private void createCircuit() {
         System.out.println(GameMessage.INPUT_CARS_LIST.getMessage());
         try {
             createCars();
-            return true;
         } catch (RuntimeException e) {
             System.out.println(e.getMessage());
-            return false;
+            createCircuit();
         }
     }
 
@@ -49,14 +48,13 @@ public class Settings {
         }
     }
 
-    private boolean createRound() {
+    private void createRound() {
         try {
             System.out.println(GameMessage.INPUT_ROUND.getMessage());
             round = new RacingRound(Console.readLine().trim());
-            return true;
         } catch (RuntimeException e) {
             System.out.println(e.getMessage());
-            return false;
+            createRound();
         }
     }
 
