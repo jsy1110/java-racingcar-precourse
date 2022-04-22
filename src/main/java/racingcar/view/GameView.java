@@ -31,8 +31,7 @@ public class GameView implements View {
 
     private void showChampion(List<String> champions) {
         printMessage(GameMessage.THE_CHAMPION.getMessage() +
-                StringUtils.join(champions,",") +
-                GameMessage.IS_WHO.getMessage());
+                StringUtils.join(champions,","));
     }
 
 }
